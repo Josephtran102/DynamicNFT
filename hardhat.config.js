@@ -1,6 +1,5 @@
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
+require('dotenv').config();
+/** @type import('hardhat/config').HardhatUserConfig */
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-web3");
@@ -13,18 +12,18 @@ require("./tasks/block-number");
 require("./tasks/dNFT");
 
 module.exports = {
-  defaultNetwork: "rinkeby",
+  defaultNetwork: "goerli",
   networks: {
     hardhat: {
       forking: {
         //this env var isn't mandatory for users who want to deploy on public networks
         url:
-          process.env.ALCHEMY_MAINNET_RPC_URL ||
-          "https://eth-mainnet.alchemyapi.io/v2/your-api-key",
+          process.env.GOERLI_RPC_URL ||
+          "https://eth-goerli.g.alchemy.com/v2/sWkVuIgRWs9WaOsMZPArr9ji6oKce86e",
       },
     },
-    rinkeby: {
-      url: process.env.RINKEBY_RPC_URL,
+    goerli: {
+      url: process.env.GOERLI_RPC_URL,
       accounts: [process.env.PRIVATE_KEY],
       saveDeployments: true,
     },
@@ -32,7 +31,7 @@ module.exports = {
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: process.env.ETHSCAN_API_KEY,
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
   namedAccounts: {
     deployer: {
