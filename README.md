@@ -13,7 +13,7 @@ Set your `RINKEBY_RPC_URL` [environment variable.](https://www.twilio.com/blog/2
 
 ```
 export RINKEBY_RPC_URL='www.infura.io/asdfadsfafdadf'
-export PRIVATE_KEY='abcdef'
+export PRIVATE_KEY='your key'
 ```
 
 Then you can install all the dependencies
